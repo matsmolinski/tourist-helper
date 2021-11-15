@@ -9,3 +9,15 @@ Tworzona przez nas usługa ma służyć do prostej i bezpiecznej analizy plików
 
 ## Diagram przypadków użycia
 ![picture](https://github.com/matsmolinski/tourist-helper/blob/main/Use%20case%20diagram.png)
+
+
+## Technologie i narzędzia
+
+Zewnętrzna warstwa czyli App Services, której zadaniem będzie umożliwienie komunikacji z użytkownikiem zaimplementowana zostanie w Pythonie.
+Stworzony zostanie mikroserwis bazujący na bibliotece Flask oraz na frameworku Jinja2. Połączenie te umożliwi nam łatwe zbudowanie aplikacji webowej
+oraz silnika templatek dzięki któremu będziemy mieli możliwość stworzyć prosty i przejrzysty interfejs graficzny.
+
+App Services będzie udostępniał między innymi możliwość logowania już zarejestrowanych użytkowników. Do przechowywania danych logowania wykorzystana zostanie usługa
+Azure Cache for Redis. W połączeniu z pythonową biblioteką PyRedis umożliwi utworzenie prostego mechanizmu autentykacji.
+
+Function Apps, który stanowi rdzeń naszej aplikacji będzie zbudowany również w pythonie. Jego zadaniem będzie bezserwerowe przetworzenie zapytań przesyłanych przez użytkowników, a także komunikacja z serwisami kognitywnymi (poznawczymi) oraz usługami Logic Apps. 
