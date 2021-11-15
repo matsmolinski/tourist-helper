@@ -3,3 +3,9 @@ Tworzona przez nas usługa ma służyć do prostej i bezpiecznej analizy plików
 
 - Po wysłaniu pliku do analizy użytkownik otrzyma powiadomienie w aplikacji, że analiza się rozpoczęła oraz, że po zakończeniu dostanie wiadomość email z kodem dostępu do analizy.
 - Użytkownik będzie posiadał własne konto do którego będzie posiadał możliwość zalogowania. Po zalogowaniu użytkownikowi zostanie udostępniona możliwość wysłania nowego obrazu do analizy, ale również i możliwość wyświetlenia historycznych analiz.
+
+## Diagram architektury
+![picture](https://github.com/matsmolinski/tourist-helper/blob/main/architecture_diagram.svg)
+
+## Diagram przypadków użycia
+![picture](https://github.com/matsmolinski/tourist-helper/blob/main/Use%20case%20diagram.png)
