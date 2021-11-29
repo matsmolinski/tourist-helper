@@ -40,16 +40,15 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         container_name = os.environ['ContainerName']
         table_service = TableService(connection_string = db_connection_str)
         blob_service = BlobServiceClient.from_connection_string(db_connection_str)
-
+        
         for user_file in req.files.values():
             logging.info('Adding file to db...')
             extension = user_file.filename.split('.')[1]
-            file_uuid = str(uuid.uuid5())
+            file_uuid = str(uuid.uuid4())
             generated_filename = '{}.{}'.format(file_uuid, extension)
-
+            
             blob_client = blob_service.get_blob_client(container = container_name, blob = generated_filename)
             blob_client.upload_blob(user_file)
-
             task = {'PartitionKey': extension, 'RowKey': file_uuid, 'email': email,
                     'language': language, 'translation': '', 'image_text': '', 'data_analysis': ''}
             table_service.insert_entity('Tasks', task)
@@ -62,4 +61,4 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     except Exception:
         msg = 'Internal server error'
         logging.error(msg)
-        return func.HttpResponse(msg, status_code= 500)
+        return func.HttpResponse(msg, status_code = 500)
