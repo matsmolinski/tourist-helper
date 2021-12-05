@@ -11,7 +11,7 @@ __logger = logging.getLogger('validation')
 
 
 def validate_request(req):
-    return [__validate_data(req), __validate_files(req)]
+    return [report for report in [__validate_data(req), __validate_files(req)] if report is not None]
 
 
 def __validate_data(req):
