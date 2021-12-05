@@ -47,10 +47,18 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             logging.info('Added file: {}'.format(file_uuid))
 
         logging.info(FILES_PROCESSING)
-        return func.HttpResponse(create_message(FILES_PROCESSING), status_code=201)
+        return func.HttpResponse(
+            json.dumps(FILES_PROCESSING),
+            mimetype="application/json",
+            status_code=201
+        )
     except Exception:
         logging.error(INTERNAL_ERROR)
-        return func.HttpResponse(create_message(INTERNAL_ERROR), status_code=500)
+        return func.HttpResponse(
+            json.dumps(INTERNAL_ERROR),
+            mimetype="application/json",
+            status_code=500
+        )
 
 
 def __get_connection_parameters():
