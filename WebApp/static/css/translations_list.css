@@ -1,0 +1,45 @@
+.col-10 {
+    margin: 5% 0 0 0;
+}
+
+.form {
+    margin: 2.5% 0 2.5% 0;
+    text-align: center;
+}
+
+.col-3 {
+    text-align: right;
+}
+
+.backgroundNotifications {
+    background: grey;
+    color: #000000;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.error, .info, .warning {
+    text-align: center;
+    font-size: 14px;
+    margin: 0 0 0 0;
+    border-radius: 2px 2px 0 0;
+    text-shadow: 2px 2px black;
+
+}
+
+.error {
+    color: red;
+}
+
+.warning {
+    color: #ffb700;
+}
+
+.info {
+    color: greenyellow;
+}
+
+.delete {
+    margin: 0 0 0 47.5%;
+}
