@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 from source.rest.index_controller import index_blueprint
 from source.rest.login_controller import login_blueprint
 from source.rest.translations_controller import translations_blueprint
-from source.rest.index import index_blueprint
 
 load_dotenv()
 app = Flask(__name__)
