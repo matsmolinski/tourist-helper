@@ -38,11 +38,12 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             extension = user_file.filename.split('.')[1]
             file_uuid = str(uuid.uuid4())
             generated_filename = '{}.{}'.format(file_uuid, extension)
-
+            token = __resolve_token(req.form)
             blob_client = blob_service.get_blob_client(container=container_name, blob=generated_filename)
             blob_client.upload_blob(user_file)
             task = {'PartitionKey': extension, 'RowKey': file_uuid, 'email': email,
-                    'language': language, 'translation': '', 'image_text': '', 'data_analysis': ''}
+                    'language': language, 'translation': '', 'image_text': '', 'data_analysis': '',
+                    'token': token}
             table_service.insert_entity('Tasks', task)
             logging.info('Added file: {}'.format(file_uuid))
 
@@ -71,3 +72,8 @@ def __resolve_language(request_data: dict):
     language = request_data.get('language', '')
     logging.info(f'User requested translation to language: {language}')
     return language
+
+def __resolve_token(request_data: dict):
+    # user send token or generate new for anonymous user
+    token = request_data.get('token', str(uuid.uuid4()))
+    return token
