@@ -10,17 +10,17 @@ async def get_translations_list():
     return render_template(template_name_or_list="translations_list.html")
 
 
-@translations_blueprint.route('', methods=['GET'])
+@translations_blueprint.route('/details', methods=['GET'])
 async def get_translation_details():
     return Response(status=200, mimetype="application/json")
 
 
-@translations_blueprint.route('', methods=['GET'])
+@translations_blueprint.route('/add-form', methods=['GET'])
 async def get_translation_form():
     return Response(status=200, mimetype="application/json")
 
 
-@translations_blueprint.route('', methods=['POST'])
+@translations_blueprint.route('/add', methods=['POST'])
 async def send_translation_request():
-    status = await translation_request(request)
-    return Response(status=200, mimetype="application/json", response=json.dumps({"function_app_status": status}))
+    status, data = await translation_request(request)
+    return Response(status=status, mimetype="application/json", response=json.dumps(data))
