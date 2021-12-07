@@ -40,4 +40,5 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     except Exception as e:
         msg = 'Error has occured'
         logging.error(msg)
+        logging.error(e)
         return func.HttpResponse(msg, status_code=500)

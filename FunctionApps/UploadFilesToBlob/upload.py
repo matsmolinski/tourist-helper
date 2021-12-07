@@ -53,8 +53,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             mimetype="application/json",
             status_code=201
         )
-    except Exception:
+    except Exception as e:
         logging.error(INTERNAL_ERROR)
+        logging.error(e)
         return func.HttpResponse(
             json.dumps(INTERNAL_ERROR),
             mimetype="application/json",
