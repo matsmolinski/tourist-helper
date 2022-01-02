@@ -3,6 +3,7 @@ import os
 
 import requests
 
+from source.modules.common.status_dict import StatusDict
 from source.modules.model.translation_request import TranslationRequest
 
 
@@ -12,6 +13,7 @@ async def translation_request(rq):
 
 
 async def __make_request(user_request: TranslationRequest):
+    # return StatusDict.REQUEST_SENT, None
     SEND_IMAGE_FUNCTION_URL = os.getenv("UPLOAD_IMAGE_URL")
     data, files = __prepare_request_data(user_request)
 
@@ -19,9 +21,9 @@ async def __make_request(user_request: TranslationRequest):
 
     data = json.loads(response.text)
     if response.status_code in range(200, 300):
-        return 200, data
+        return StatusDict.REQUEST_SENT, data
     else:
-        return 400, data
+        return StatusDict.GENERAL_ERROR, data
 
 
 def __prepare_request_data(user_request: TranslationRequest):
