@@ -1,0 +1,22 @@
+.column-description {
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    alignment: center;
+    text-align: center;
+}
+
+.column-content {
+    margin: 5% 0% 5% 5%;
+}
+
+
+.translation-image {
+    width: 100%;
+    padding: 5% 5% 5% 5%;
+}
+
+
+.col-10 {
+    margin: 5% 0 0 0;
+}

@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class StatusDict(Enum):
+    TRANSLATION_FETCHED = "TRANSLATION_FETCHED"
     REQUEST_SENT = "REQUEST_SENT"
     GENERAL_ERROR = "GENERAL_ERROR"
 
