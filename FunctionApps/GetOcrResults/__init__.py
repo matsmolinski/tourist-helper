@@ -28,7 +28,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             return func.HttpResponse(msg, status_code=400) 
         
         for item in ocr_results.items:
-            del item["Timestamp"]
+            item['Timestamp']=str(item['Timestamp'])
             del item["etag"]
 
         return func.HttpResponse(
