@@ -13,3 +13,11 @@ class StatusDict(Enum):
 
     def __str__(self):
         return str(self.value)
+
+
+class TranslationStatusDict(Enum):
+    READY = "READY"
+    IN_PROGRESS = "IN_PROGRESS"
+
+    def __str__(self):
+        return str(self.value)

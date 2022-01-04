@@ -12,4 +12,4 @@ app.secret_key = "SECRET KEY IN PLAIN TEXT PLZ DONT STEAL"
 for blueprint in [translations_blueprint, login_blueprint, index_blueprint]:
     app.register_blueprint(blueprint)
 
-# app.run()
+app.run()

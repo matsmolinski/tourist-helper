@@ -20,36 +20,30 @@
             <div class="background">
                 <h2 class="title">Your translations</h2>
                 <div class="list-group">
+                    <div class="list-group">
+                        <div class="row content-row header-row">
+                            <div class="col-1">No.</div>
+                            <div class="col-4">Photo</div>
+                            <div class="col-2">Status</div>
+                            <div class="col-3">Request date</div>
+                            <div class="col-2 details-col">Details</div>
+                        </div>
+                        {% for translation in translations_list %}
+                        <div class="row content-row">
+                            <div class="col-1">{{ loop.index }}</div>
+                            <div class="col-4"><img class="translation-image" src="{{ translation.image_url }}"></div>
+                            <div class="col-2">{{ translation.status }}</div>
+                            <div class="col-3">{{ translation.timestamp }}</div>
+                            <div class="col-2 details-col"><a class="btn btn-success" href="/" role="button">Details</a></div>
 
-                    <table>
-                        {% for translation in user_translations %}
-                        <TR>
-                            <TD class="c1">{{ loop.index }}</TD>
-                            <TD class="c2">{{translation.date}}</TD>
-                            <TD class="c3">{{translation.id}}</TD>
-                            <TD class="c4"><SPAN>{{translation.position}}</SPAN></TD>
-                            <TD class="c5"><SPAN>{{translation.status}}</SPAN></TD>
-                        </TR>
+                        </div>
+                        <!--                        <a class="list-group-item list-group-item-action"-->
+                        <!--                           href="https://web.company.com/details?token={{ listToken }}-->
+                        <!--                    &uid={{ uid }}&pid={{ id }}">{{ loop.index }}. {{ title }}</a>-->
                         {% endfor %}
-                    </table>
+                    </div>
 
-<!--                    {% for id, title in listOfPublications.items() %}-->
-<!--                    {% if id != 'extraPublications' %}-->
-<!--                    <a class="list-group-item list-group-item-action"-->
-<!--                       href="https://web.company.com/details?token={{ listToken }}-->
-<!--                    &uid={{ uid }}&pid={{ id }}">{{ loop.index }}. {{ title }}</a>-->
-<!--                    {% endif %}-->
-<!--                    {% endfor %}-->
-<!--                    {% if listOfPublications.get('extraPublications') != None %}-->
-<!--                    {% for owner, publications in listOfPublications.get('extraPublications').items() %}-->
-<!--                    {% for publication, title in publications.items() %}-->
-<!--                    <a class="list-group-item list-group-item-action"-->
-<!--                       href="https://web.company.com/detailsshare?token={{ listToken }}-->
-<!--                    &uid={{ uid }}&spid={{ publication }}&suid={{ owner }}">{{ loop.index }}. [Publikacja użytkownika:{{-->
-<!--                        owner }}] {{ title.get('title') }}</a>-->
-<!--                    {% endfor %}-->
-<!--                    {% endfor %}-->
-<!--                    {% endif %}-->
+
                 </div>
                 <form class="form" action="/add">
                     <input class="btn btn-primary" type="submit" value="Add new translation request"/>

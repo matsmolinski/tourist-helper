@@ -4,9 +4,13 @@
     align-items: center;
     alignment: center;
     text-align: center;
+    font-size: larger;
+    text-decoration: underline;
+    font-weight: bold
 }
 
 .column-content {
+    text-align: justify;
     margin: 5% 0% 5% 5%;
 }
 
@@ -18,5 +22,9 @@
 
 
 .col-10 {
-    margin: 5% 0 0 0;
+    margin: 5% 0 5% 0;
+}
+
+.btn-primary {
+    margin: 0 0 2% 0;
 }

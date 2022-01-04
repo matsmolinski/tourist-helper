@@ -7,9 +7,6 @@
     text-align: center;
 }
 
-.col-3 {
-    text-align: right;
-}
 
 .backgroundNotifications {
     background: grey;
@@ -42,4 +39,18 @@
 
 .delete {
     margin: 0 0 0 47.5%;
+}
+
+.content-row {
+    margin: 2.5% 0.5% 2.5% 0.5%;
+}
+
+.translation-image {
+    width: 100%;
+    height: 100%;
+}
+
+.header-row {
+    font-weight: bold;
+    font-size: large;
 }
