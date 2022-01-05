@@ -13,3 +13,5 @@ class TranslationListEntry:
     timestamp: str
     status: str
     image_url: str
+    token: str
+

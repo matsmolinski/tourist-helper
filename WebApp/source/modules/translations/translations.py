@@ -26,7 +26,7 @@ async def fetch_translations_list():
                 entries.append(
                     TranslationListEntry(json_response['Timestamp'][:-13], TranslationStatusDict.READY.value if json_response[
                         'image_text'] else TranslationStatusDict.IN_PROGRESS.value,
-                                         f'{os.getenv("PHOTO_CONTAINER_URL")}/{json_response["RowKey"]}.{json_response["PartitionKey"]}'))
+                                         f'{os.getenv("PHOTO_CONTAINER_URL")}/{json_response["RowKey"]}.{json_response["PartitionKey"]}', json_response['token']))
 
     return entries
 

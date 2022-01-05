@@ -39,10 +39,14 @@
                         <div class="column-content">{{translation_text}}</div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row-navigation">
                     <div class="col-12">
                         <div class="column-description">
-                            <a class="btn btn-primary" href="/" role="button">Main menu</a>
+                            {% if guest == true %}
+                            <a class="btn btn-success" href="/" role="button">Translation list</a>
+                            {% else %}
+                            <a class="btn btn-success" href="/" role="button">Main menu</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

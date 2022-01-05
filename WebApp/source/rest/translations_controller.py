@@ -20,7 +20,7 @@ async def get_translation_details():
                            translation_text=data.translation_text, image_url=data.image_url)
 
 
-@translations_blueprint.route('/add-form', methods=['GET'])
+@translations_blueprint.route('/add', methods=['GET'])
 async def get_translation_form():
     return render_template(template_name_or_list="translations_request.html")
 
