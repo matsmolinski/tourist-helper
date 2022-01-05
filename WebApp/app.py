@@ -7,5 +7,9 @@ from source.rest.translations_controller import translations_blueprint
 
 load_dotenv()
 app = Flask(__name__)
+app.secret_key = "SECRET KEY IN PLAIN TEXT PLZ DONT STEAL"
+
 for blueprint in [translations_blueprint, login_blueprint, index_blueprint]:
     app.register_blueprint(blueprint)
+
+app.run()
