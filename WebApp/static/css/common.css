@@ -41,3 +41,7 @@ body {
     color: greenyellow;
 }
 
+.navigation-row {
+    margin: 0% 0% 2% 0%;
+    text-align: center;
+}
