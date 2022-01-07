@@ -1,16 +1,16 @@
-from flask import Blueprint, Response
+from flask import Blueprint, Response, render_template
 
 login_blueprint = Blueprint('login', __name__, template_folder='templates', url_prefix="/")
 
 
 @login_blueprint.route('login', methods=['GET'])
 async def get_login_form():
-    return Response(status=200, mimetype="application/json")
+    return render_template(template_name_or_list="login_form.html")
 
 
 @login_blueprint.route('register', methods=['GET'])
 async def get_register_form():
-    return Response(status=200, mimetype="application/json")
+    return render_template(template_name_or_list="register_form.html")
 
 
 @login_blueprint.route('register', methods=['POST'])
