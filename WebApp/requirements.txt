@@ -2,3 +2,4 @@ flask[async]
 python-dotenv
 aiohttp
 requests
+redis

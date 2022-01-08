@@ -14,13 +14,6 @@ from source.modules.model.translation_response import TranslationResponse, Trans
 async def fetch_translations_list(email: str):
     tokens = await __fetch_user_tokens(email)
 
-    # tokens = [
-    #     "9f7eec06-ddcc-4572-90d5-f8d142170f45",
-    #     "97908544-20a2-49e8-9d97-007b16db689b",
-    #     "ce5ec719-9b01-40f5-9541-d55e3c0ef352",
-    #     "803dee61-986e-4bce-8311-8baff340f3ef"
-    # ]
-
     FETCH_TRANSLATION_URL = os.getenv("FETCH_TRANSLATION_URL")
     entries = []
 
