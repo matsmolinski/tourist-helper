@@ -3,7 +3,7 @@ import os
 from typing import List
 
 import requests
-from redis import Redis
+from redis import StrictRedis
 
 from source.modules.common.redis_connection import get_redis
 from source.modules.common.status_dict import StatusDict, TranslationStatusDict
@@ -43,13 +43,13 @@ async def translation_request(rq, email: str):
 
 
 async def __fetch_user_tokens(email: str):
-    redis: Redis = get_redis()
+    redis: StrictRedis = get_redis()
     user_tokens = json.loads(redis.hget("user_tokens", email).decode("UTF-8"))
     return user_tokens
 
 
 async def __save_user_tokens(email: str, tokens: List[str]):
-    redis: Redis = get_redis()
+    redis: StrictRedis = get_redis()
     redis.hset("user_tokens", email, json.dumps(tokens))
 
 

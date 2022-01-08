@@ -1,13 +1,13 @@
 import json
 
-from redis import Redis
+from redis import StrictRedis
 
 from source.modules.common.redis_connection import get_redis
 from source.modules.common.status_dict import StatusDict
 
 
 def authenticate_user(form_data: dict):
-    redis: Redis = get_redis()
+    redis: StrictRedis = get_redis()
 
     email = form_data.get("email", None)
     password = form_data.get("password", None)
@@ -19,7 +19,7 @@ def authenticate_user(form_data: dict):
 
 
 def register_new_user(form_data: dict):
-    redis: Redis = get_redis()
+    redis: StrictRedis = get_redis()
 
     email = form_data.get("email", None)
     password = form_data.get("password", None)
