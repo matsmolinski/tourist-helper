@@ -10,13 +10,13 @@ login_blueprint = Blueprint('login', __name__, template_folder='templates', url_
 @redirect_if_logged()
 @login_blueprint.route('login', methods=['GET'])
 async def get_login_form():
-    return render_template(template_name_or_list="login.html")
+    return render_template(template_name_or_list="login_form.html")
 
 
 @redirect_if_logged()
 @login_blueprint.route('register', methods=['GET'])
 async def get_register_form():
-    return Response(status=200, mimetype="application/json")
+    return render_template(template_name_or_list="register_form.html")
 
 
 @redirect_if_logged()

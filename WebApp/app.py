@@ -15,4 +15,4 @@ for blueprint in [translations_blueprint, login_blueprint, index_blueprint]:
 
 server_session = Session(app)
 
-app.run()
+#app.run()
