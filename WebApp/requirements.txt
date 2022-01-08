@@ -3,4 +3,3 @@ python-dotenv
 aiohttp
 requests
 redis
-pathlib
