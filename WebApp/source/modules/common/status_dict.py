@@ -7,6 +7,9 @@ class StatusDict(Enum):
     GENERAL_ERROR = "GENERAL_ERROR"
     INCORRECT_CREDENTIALS = "INCORRECT_CREDENTIALS"
     LOGGED_OUT = "LOGGED_OUT"
+    REPEAT_PASSWORD = "REPEAT_PASSWORD"
+    LOGIN_EXISTS = "LOGIN_EXISTS"
+    ACCOUNT_CREATED = "ACCOUNT_CREATED"
 
     def __eq__(self, other):
         if isinstance(other, Enum):

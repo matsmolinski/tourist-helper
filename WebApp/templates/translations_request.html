@@ -28,10 +28,12 @@
                 <h2 class="title">New translation request</h2>
                 <form class="form" action="/translation/add" method="POST"
                       enctype="multipart/form-data">
+                    {% if logged == false %}
                     <div class="form-group">
                         <label>Email:</label>
                         <input type="email" class="form-control" name="email" id="email" placeholder="Your email" required>
                     </div>
+                    {% endif %}
                     <div class="form-group">
                         <label>File:</label>
                         <div class="custom-file" id="customFile" lang="es">

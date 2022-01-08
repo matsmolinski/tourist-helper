@@ -1,3 +1,5 @@
+import functools
+
 from flask import make_response, session
 
 from source.modules.common.status_dict import StatusDict
@@ -12,6 +14,12 @@ def create_error_message_fragment(error_code):
         return f'<div class="error">Incorrect credentials!</div>'
     elif StatusDict.LOGGED_OUT == error_code:
         return f'<div class="info">Logged out successfully!</div>'
+    elif StatusDict.REPEAT_PASSWORD == error_code:
+        return f'<div class="error">Password mismatch!</div>'
+    elif StatusDict.ACCOUNT_CREATED == error_code:
+        return f'<div class="info">Account created!</div>'
+    elif StatusDict.LOGIN_EXISTS == error_code:
+        return f'<div class="error">Login exists!</div>'
     return ''
 
 
@@ -24,21 +32,23 @@ def redirect(error_code, location="/"):
 
 def logged_only(error_code=StatusDict.INCORRECT_CREDENTIALS.value, redirection_url="/"):
     def inner(func):
-        def wrapper(*args, **kwargs):
+        @functools.wraps(func)
+        async def wrapper(*args, **kwargs):
             if session.get('email', None) is not None:
-                func(*args, **kwargs)
+                return await func(*args, **kwargs)
             else:
-                redirect(error_code, redirection_url)
+                return redirect(error_code, redirection_url)
         return wrapper
     return inner
 
 
 def redirect_if_logged(redirection_url="/translation"):
     def inner(func):
-        def wrapper(*args, **kwargs):
+        @functools.wraps(func)
+        async def wrapper(*args, **kwargs):
             if session.get('email', None) is None:
-                func(*args, **kwargs)
+                return await func(*args, **kwargs)
             else:
-                redirect(None, redirection_url)
+                return redirect(None, redirection_url)
         return wrapper
     return inner

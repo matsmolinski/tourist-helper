@@ -34,16 +34,18 @@
                             <div class="col-4"><img class="translation-image" src="{{ translation.image_url }}"></div>
                             <div class="col-2">{{ translation.status }}</div>
                             <div class="col-3">{{ translation.timestamp }}</div>
+                            {% if translation.status == "READY" %}
                             <div class="col-2 details-col"><a class="btn btn-success"
                                                               href="/translation/details?token={{ translation.token}}"
                                                               role="button">Details</a></div>
+                            {% endif %}
                         </div>
                         {% endfor %}
                     </div>
                 </div>
                 <div class="row navigation-row">
                     <div class="col-12">
-                        <a class="btn btn-primary" href="#" role="button">Logout</a>
+                        <a class="btn btn-primary" href="/logout" role="button">Logout</a>
                         <a class="btn btn-primary" href="/translation/add" role="button">New request</a>
                     </div>
                 </div>
