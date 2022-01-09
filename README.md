@@ -24,10 +24,17 @@ Function Apps, który stanowi rdzeń naszej aplikacji będzie zbudowany równie�
 
 ## Prezentacja rozwiązania
 W projekcie utworzona została aplikacja internetowa, która pozwala na tłumaczenia anonimowe oraz tłumaczenie powiązane z kontem użytkownika.
-![picture]()
+
+<img src="https://github.com/matsmolinski/tourist-helper/blob/main/mainPage.png" height="150">
 
 Po każdym tłumaczeniu użytkownik jest informowany drogą mailową o zakończeniu tłumaczenia. Użytkownik otrzymuje link do odczytu wyników.
-![picture]()
+
+<img src="https://github.com/matsmolinski/tourist-helper/blob/main/email.png" height="150">
 
 Zalogowani użytkownicy mogą w każdej chwili sprawdzić swoje wszystkie tłumaczenia.
-![picture]()
+
+<img src="https://github.com/matsmolinski/tourist-helper/blob/main/list.png" height="250">
+
+Przykładowe wyniki tłumaczenia prezentują się następująco:
+
+<img src="https://github.com/matsmolinski/tourist-helper/blob/main/result.png" height="250">
