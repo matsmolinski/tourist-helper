@@ -21,3 +21,13 @@ App Services będzie udostępniał między innymi możliwość logowania już za
 Azure Cache for Redis. W połączeniu z pythonową biblioteką PyRedis umożliwi utworzenie prostego mechanizmu autentykacji.
 
 Function Apps, który stanowi rdzeń naszej aplikacji będzie zbudowany również w pythonie. Jego zadaniem będzie bezserwerowe przetworzenie zapytań przesyłanych przez użytkowników, a także komunikacja z serwisami kognitywnymi (poznawczymi) oraz usługami Logic Apps. 
+
+## Prezentacja rozwiązania
+W projekcie utworzona została aplikacja internetowa, która pozwala na tłumaczenia anonimowe oraz tłumaczenie powiązane z kontem użytkownika.
+![picture]()
+
+Po każdym tłumaczeniu użytkownik jest informowany drogą mailową o zakończeniu tłumaczenia. Użytkownik otrzymuje link do odczytu wyników.
+![picture]()
+
+Zalogowani użytkownicy mogą w każdej chwili sprawdzić swoje wszystkie tłumaczenia.
+![picture]()
