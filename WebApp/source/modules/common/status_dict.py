@@ -10,6 +10,7 @@ class StatusDict(Enum):
     REPEAT_PASSWORD = "REPEAT_PASSWORD"
     LOGIN_EXISTS = "LOGIN_EXISTS"
     ACCOUNT_CREATED = "ACCOUNT_CREATED"
+    INCORRECT_TOKEN = "INCORRECT_TOKEN"
 
     def __eq__(self, other):
         if isinstance(other, Enum):

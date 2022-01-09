@@ -20,6 +20,8 @@ def create_error_message_fragment(error_code):
         return f'<div class="info">Account created!</div>'
     elif StatusDict.LOGIN_EXISTS == error_code:
         return f'<div class="error">Login exists!</div>'
+    elif StatusDict.INCORRECT_TOKEN == error_code:
+        return f'<div class="error">Nieprawidłowy token!</div>'
     return ''
 
 

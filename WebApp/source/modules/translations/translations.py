@@ -71,6 +71,8 @@ async def __fetch_result(token):
         data = TranslationResponse(original_text, translation_text, file_path)
 
         return StatusDict.TRANSLATION_FETCHED, data
+    elif response.status_code in range(400, 500):
+        return StatusDict.INCORRECT_TOKEN, None
     else:
         return StatusDict.GENERAL_ERROR, None
 
