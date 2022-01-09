@@ -111,8 +111,10 @@ def main(myblob: func.InputStream):
     logging.info('Table storage updated')
 
     url = os.environ["EmailURL"]
+    results_url = os.environ["GetOcrResultURL"]
+    results_url = results_url + str(task.token)
     content = {
         'email': task.email,
-        'code': rowkey
+        'url': results_url
     }
     x = requests.post(url, json=content)
