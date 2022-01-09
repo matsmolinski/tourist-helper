@@ -60,8 +60,8 @@ async def __fetch_result(token):
     if response.status_code in range(200, 300):
         json_response = response.json()[0]
 
-        translation_text = json_response['translation']
-        translation_text = translation_text.replace("\\n", " ").split(":")[2][:-1]
+        translation_text = json_response['translation'].encode('UTF-8').decode('unicode_escape')
+        translation_text = translation_text.replace("\n", " ").split(":")[2][:-1]
 
         original_text = json_response['image_text']
         original_text = original_text.replace("\n", " ")
